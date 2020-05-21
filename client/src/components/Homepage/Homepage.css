@@ -1,0 +1,19 @@
+.Homepage {
+    display: flex;
+}
+
+.introduction {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+}
+
+.intro-text {
+    width: 600px
+}
+
+.login {
+    width: 40%;
+}
