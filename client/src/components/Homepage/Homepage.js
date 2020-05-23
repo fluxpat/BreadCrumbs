@@ -1,5 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom'
 import './Homepage.css'
+import Signup from '../Auth/Signup'
+import Login from '../Auth/Login'
 
 const Homepage = () => {
 
@@ -15,15 +18,8 @@ const Homepage = () => {
                 </p>
                 <button>See Demo</button>
             </div>
-
-            <div className="login">
-                <h2>Login</h2>
-                <p>Don't have an account?</p>
-                <p>Click here to create one.</p>
-                <input type="text" />
-                <input type="text" />
-                <button>Login</button>
-            </div>
+            <Route exact path='/' component={Login} />
+            <Route exact path='/signup' component={Signup} />
         </div>
     )
 }

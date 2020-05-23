@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { signup } from "../../services/auth-services"
+import { Link } from "react-router-dom"
+import { login } from "../../services/auth-services"
 
-const Signup = () => {
+const Login = () => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     let handleFormSubmit = (event) => {
         event.preventDefault();
-        // const username = username;
-        // const password = password;
+        // const username = this.state.username;
+        // const password = this.state.password;
 
-        signup(username, password)
+        login(username, password)
             .then(response => {
                 setUsername("")
                 setPassword("")
@@ -21,7 +22,9 @@ const Signup = () => {
     }
 
     return (
-        <div className="signup">
+        <div className="login">
+            <p>Don't have an account?</p>
+            <Link to='/signup'>Click here to signup</Link>
             <form onSubmit={handleFormSubmit}>
                 <label>Username:</label>
                 <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
@@ -29,10 +32,10 @@ const Signup = () => {
                 <label>Password:</label>
                 <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
 
-                <input type="submit" value="Signup" />
+                <input type="submit" value="Login" />
             </form>
         </div>
     )
 }
 
-export default Signup
+export default Login
