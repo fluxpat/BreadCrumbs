@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import { login } from "../../services/auth-services"
 
-const Login = () => {
+const Login = (props) => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -14,11 +14,14 @@ const Login = () => {
 
         login(username, password)
             .then(response => {
+                console.log("This is the login response: ", response)
                 setUsername("")
                 setPassword("")
+                props.setUser(response)
                 // this.props.getUser(response)
             })
             .catch(error => console.log(error))
+
     }
 
     return (

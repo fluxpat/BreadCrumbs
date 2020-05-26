@@ -20,7 +20,7 @@ router.post("/signup", (req, res, next) => {
     }
 
     if (password.length < 7) {
-        res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
+        res.status(400).json({ message: 'Please make your password at least 7 characters long for security purposes.' });
         return;
     }
 
@@ -52,10 +52,10 @@ router.post("/signup", (req, res, next) => {
                         res.status(500).json({ message: 'Login after signup went bad.' });
                         return;
                     }
-                // Send the user's information to the frontend
-                // We can use also: res.status(200).json(req.user);
-                res.status(200).json(newUser);
-                    });
+                    // Send the user's information to the frontend
+                    // We can use also: res.status(200).json(req.user);
+                    res.status(200).json(newUser);
+                });
 
             });
         })
@@ -103,11 +103,15 @@ router.delete('/logout', (req, res, next) => {
 // Logged-in check GET route
 router.get('/loggedin', (req, res, next) => {
     // req.isAuthenticated() is defined by passport
-    if (req.isAuthenticated()) {
+    // if (req.isAuthenticated()) {
+    if (req.user) {
+        console.log("You are currently logged in!")
         res.status(200).json(req.user);
         return;
+    } else {
+        console.log("No user is currently logged in!")
+        res.json({ message: 'Not currently logged in' });
     }
-    res.status(403).json({ message: 'Unauthorized' });
 });
 
 module.exports = router;

@@ -4,8 +4,11 @@ import './Homepage.css'
 import Signup from '../Auth/Signup'
 import Login from '../Auth/Login'
 
-const Homepage = () => {
+const Homepage = (props) => {
 
+    let setUser = props.setUser
+
+    console.log("HOMEPAGE's props: ", props)
 
     return (
         <div className="Homepage">
@@ -14,12 +17,12 @@ const Homepage = () => {
                 <p className='intro-text'>
                     It is said that self-reflection is the key to personal development.
                     How can we measure our growth without documenting our progress in important facets of life?
-                    BreadCrumbs provides a simple system for logging your state of mind at different moments (called crumbs) and allows you to reflect on how much you've changed as a person over time.
+                    BreadCrumbs provides a simple system for logging your state of mind at different moments allowing you to reflect as you change and grow over time.
                 </p>
                 <button>See Demo</button>
             </div>
-            <Route exact path='/' component={Login} />
-            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/' render={props => <Login {...props} setUser={setUser} />} />
+            <Route exact path='/signup' render={props => <Signup {...props} setUser={setUser} />} />
         </div>
     )
 }
