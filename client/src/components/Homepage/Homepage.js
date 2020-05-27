@@ -12,12 +12,12 @@ const Homepage = (props) => {
 
     return (
         <div className="Homepage">
-            <div className='introduction'>
+            <div className='home-intro'>
                 <h1>BreadCrumbs</h1>
-                <p className='intro-text'>
+                <p className='home-intro-text'>
                     It is said that self-reflection is the key to personal development.
                     How can we measure our growth without documenting our progress in important facets of life?
-                    BreadCrumbs provides a simple system for logging your state of mind at different moments allowing you to reflect as you change and grow over time.
+                    BreadCrumbs provides a simple system for logging your thoughts and state of mind at different moments allowing you to reflect as you change and grow over time.
                 </p>
                 <button>See Demo</button>
             </div>

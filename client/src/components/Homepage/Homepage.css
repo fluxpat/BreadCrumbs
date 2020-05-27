@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.introduction {
+.home-intro {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -10,10 +10,6 @@
     background-color: aqua;
 }
 
-.intro-text {
+.home-intro-text {
     width: 600px
-}
-
-.login {
-    width: 40%;
 }
