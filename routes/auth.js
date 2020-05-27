@@ -14,13 +14,13 @@ router.post("/signup", (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
 
-    if (username === "" || password === "") {
-        res.status(400).json({ message: "Please provide a valid username and password" });
+    if (username === "") {
+        res.status(400).json({ message: "Please provide a valid username" });
         return;
     }
 
-    if (password.length < 7) {
-        res.status(400).json({ message: 'Please make your password at least 7 characters long for security purposes.' });
+    if (password === "") {
+        res.status(400).json({ message: "Please provide a valid password" });
         return;
     }
 
@@ -28,6 +28,11 @@ router.post("/signup", (req, res, next) => {
         .then(user => {
             if (user !== null) {
                 res.status(400).json({ message: "The username already exists" });
+                return;
+            }
+
+            if (password.length < 7) {
+                res.status(400).json({ message: 'Your password must be at least 7 characters long' });
                 return;
             }
 

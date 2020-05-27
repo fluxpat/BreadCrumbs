@@ -1,0 +1,9 @@
+.Auth {
+    text-align: center;
+    align-items: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}

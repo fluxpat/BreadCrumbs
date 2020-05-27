@@ -15,9 +15,9 @@ const Homepage = (props) => {
             <div className='home-intro'>
                 <h1>BreadCrumbs</h1>
                 <p className='home-intro-text'>
-                    It is said that self-reflection is the key to personal development.
-                    How can we measure our growth without documenting our progress in important facets of life?
-                    BreadCrumbs provides a simple system for logging your thoughts and state of mind at different moments allowing you to reflect as you change and grow over time.
+                    Self-reflection is a key part of personal development.
+                    Documenting and reflecting on our progress helps us continuously improve with direction and purpose.
+                    BreadCrumbs provides a simple system for logging your thoughts and state of mind allowing you to look back and reflect as you change and grow over time.
                 </p>
                 <button>See Demo</button>
             </div>
