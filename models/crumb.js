@@ -11,6 +11,6 @@ const crumbSchema = new Schema({
     }
 )
 
-const User = mongoose.model("Crumb", userSchema);
+const Crumb = mongoose.model("Crumb", crumbSchema);
 
 module.exports = Crumb

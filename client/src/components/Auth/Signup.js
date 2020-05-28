@@ -31,21 +31,22 @@ const Signup = (props) => {
 
     return (
         <div className="Auth">
+            <h1>Signup</h1>
             <p>Already have an account?</p>
-            <Link to='/'>Click here to login</Link>
+            <Link className="link" to='/'>Click here to login</Link>
             <form className="auth-form" onSubmit={handleFormSubmit}>
                 <div className="username">
-                    <label>Username:</label>
+                    <label>Username: </label>
                     <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
                 </div>
                 <div className="password">
-                    <label>Password:</label>
+                    <label>Password: </label>
                     <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
-                <input type="submit" value="Signup" />
+                <input className="button" type="submit" value="Signup" />
             </form>
             {error ? (
-                <p>{error}</p>
+                <p className="error">{error}</p>
             ) : (<></>)}
         </div>
     )

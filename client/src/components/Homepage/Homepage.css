@@ -1,15 +1,37 @@
+/* 
+Text accent: #3C394B
+
+Dark Grey accent (buttons): #3F4247
+
+Beige primary: #F5C3A9
+Beige secondary: #FAF7F2
+
+Teal primary: #C4DAE1
+Teal secondary: #F5F9FA
+
+Red accent:#EA5E3B
+
+*/
+
 .Homepage {
     display: flex;
     height: 100vh;
 }
 
 .home-intro {
-    width: 60%;
+    width: 60vw;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background-color:#FAF7F2;
+    box-shadow: 0.3px 0px 8px 0.5px rgb(160, 160, 160)
+}
+
+.logo {
+    font-family: 'Yellowtail', cursive;
+    font-size: 5em;
+    color: #3C394B
 }
 
 .home-intro-text {

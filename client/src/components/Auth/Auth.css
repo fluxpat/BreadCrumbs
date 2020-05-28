@@ -1,9 +1,70 @@
+/* 
+Text accent: #3C394B
+
+Dark Grey accent (buttons): #3F4247
+
+Beige primary: #F5C3A9
+Beige secondary: #FAF7F2
+
+Teal primary: #C4DAE1
+Teal secondary: #F5F9FA
+
+Red accent:#EA5E3B
+
+*/
+
 .Auth {
-    text-align: center;
-    align-items: center;
+    width: 40vw;
+    margin-top: 15vh;
+    /* text-align: center; */
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+p {
+    margin: 10px
+}
+
+a {
+    margin: 0 0 10px 0;
+    text-decoration: none;
+    color: rgb(60, 180, 255)
+}
+
+a:hover {
+    color: rgb(0, 111, 180)
+}
+
+.username {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.password {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .auth-form {
+    margin: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center
+}
+
+.button {
+    margin: 20px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3F4247;
+    color: #FFFFFF
+}
+
+.error {
+    color: rgb(255, 70, 70);
 }

@@ -22,7 +22,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// USE passport.initialize() and passport.session()
+// Use passport.initialize() and passport.session()
 app.use(passport.initialize());
 app.use(passport.session());
 
