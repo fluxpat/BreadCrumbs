@@ -14,6 +14,18 @@ Red accent:#EA5E3B
 
 .User-page {
     margin-top: 60px;
-    width: 1000px;
+    width: 950px;
+
+    display: flex;
+}
+
+.feed {
+    width: 70%;
     background-color: #F5F9FA;
+}
+
+.sidebar {
+    background-color: #FAF7F2;
+    width: 30%;
+    height: 1000px;
 }
