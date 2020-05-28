@@ -3,14 +3,13 @@ Text accent: #3C394B
 
 Dark Grey accent (buttons): #3F4247
 
-Beige primary: #F5C3A9
+Beige primary: #F1E9E3
 Beige secondary: #FAF7F2
 
 Teal primary: #C4DAE1
 Teal secondary: #F5F9FA
 
 Red accent:#EA5E3B
-
 */
 
 .Auth {
@@ -21,6 +20,11 @@ Red accent:#EA5E3B
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+h1 {
+    color: #3C394B;
+    font-weight: 400;
 }
 
 p {
@@ -37,16 +41,16 @@ a:hover {
     color: rgb(0, 111, 180)
 }
 
-.username {
+.credentials {
     margin: 10px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.password {
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
+.credentials > input {
+    border-radius: 8px;
+    border: 1px solid grey;
 }
 
 .auth-form {
@@ -58,13 +62,18 @@ a:hover {
 
 .button {
     margin: 20px;
+    height: 30px;
     width: 100px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     background-color: #3F4247;
-    color: #FFFFFF
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .error {
+    margin: 0;
     color: rgb(255, 70, 70);
+    font-size: 0.85em;
+    font-weight: 100;
 }

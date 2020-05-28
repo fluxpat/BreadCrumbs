@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const crumbSchema = new Schema({
     crumbType: String,
     content: String,
-    user_id: []
+    user: { type: Schema.Types.ObjectId, ref: 'User' }
 },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

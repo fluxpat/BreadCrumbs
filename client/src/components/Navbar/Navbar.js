@@ -1,5 +1,7 @@
 import React from 'react';
+// import { Link } from 'react-router-dom'
 import { logout } from "../../services/auth-services"
+import './Navbar.css'
 
 const Navbar = (props) => {
 
@@ -10,13 +12,14 @@ const Navbar = (props) => {
 
     return (
         <div className="Navbar">
-            <div className="logo">
-                <h2>BreadCrumbs</h2>
-            </div>
-            <div className="navButtons">
-                <button>My Crumbs</button>
-                <button>New Crumb</button>
-                <button onClick={handleClick}>Logout</button>
+            <div className="nav-content">
+                <h2 className="nav-logo">BreadCrumbs</h2>
+                <div className="nav-buttons">
+                    <img src="./home.png" alt="home button" className="home-icon" />
+                    <img src="./user.png" alt="button to navigate to user profile" className="profile-icon" />
+                    <img src="./logout.png" alt="logout button" className="logout-icon" onClick={handleClick} />
+                    <img src="./donut.png" alt="button for adding a new post" className="new-crumb" />
+                </div>
             </div>
         </div>
     )

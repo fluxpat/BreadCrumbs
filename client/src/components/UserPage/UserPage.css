@@ -1,0 +1,19 @@
+/* 
+Text accent: #3C394B
+
+Dark Grey accent (buttons): #3F4247
+
+Beige primary: #F1E9E3
+Beige secondary: #FAF7F2
+
+Teal primary: #C4DAE1
+Teal secondary: #F5F9FA
+
+Red accent:#EA5E3B
+*/
+
+.User-page {
+    margin-top: 60px;
+    width: 1000px;
+    background-color: #F5F9FA;
+}

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     username: String,
     password: String,
-    BreadCrumbs: []
+    crumbs: [{ type: Schema.Types.ObjectId, ref: 'Crumb' }]
 },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

@@ -16,10 +16,10 @@ function App(props) {
       {user.message ? (
         <Route path='/' render={props => <Homepage {...props} setUser={setUser} />} />
       ) : (
-          <>
+          <div className="user-app">
             <Route path='/' render={props => <Navbar {...props} setUser={setUser} />} />
             <Route path='/' render={props => <UserPage {...props} setUser={setUser} />} />
-          </>
+          </div>
         )}
     </div>
   );

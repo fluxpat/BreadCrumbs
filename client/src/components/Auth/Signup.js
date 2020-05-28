@@ -35,11 +35,11 @@ const Signup = (props) => {
             <p>Already have an account?</p>
             <Link className="link" to='/'>Click here to login</Link>
             <form className="auth-form" onSubmit={handleFormSubmit}>
-                <div className="username">
+                <div className="credentials">
                     <label>Username: </label>
                     <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
                 </div>
-                <div className="password">
+                <div className="credentials">
                     <label>Password: </label>
                     <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </div>

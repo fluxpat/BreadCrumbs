@@ -19,8 +19,8 @@ const Homepage = (props) => {
                     Documenting and reflecting on our progress helps us continuously improve with direction and purpose.
                     BreadCrumbs provides a simple system for logging your thoughts and state of mind allowing you to look back and reflect as you change and grow over time.
                 </p>
-                <img src="/Brioche.png" alt=""/>
-                <button>See Demo</button>
+                <img className="brioche" src="/Brioche.png" alt="" />
+                {/* <button>See Demo</button> */}
             </div>
             <Route exact path='/' render={props => <Login {...props} setUser={setUser} />} />
             <Route exact path='/signup' render={props => <Signup {...props} setUser={setUser} />} />
