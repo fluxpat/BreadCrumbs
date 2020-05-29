@@ -21,7 +21,10 @@ const UserPage = (props) => {
             })
             // props.setUser(props.user)
         } else {
-            setPostStatus(false)
+            setPostStatus(false);
+            axios.get("/api/auth/loggedin").then(response => {
+                props.setUser(response.data)
+            })
         }
     }
 
@@ -33,8 +36,8 @@ const UserPage = (props) => {
                         <h3>Make a quick-post</h3>
                         {!postStatus ? (<h4>Cannot submit an empty post</h4>) : (<h4> </h4>)}
                     </div>
-                    <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} />
-                    <textarea type="text" name="text" value={quickPost} onChange={e => setQuickPost(e.target.value)} id="txtInput" />
+                    <input type="text" name="title" value={title} placeholder="Title" onChange={e => setTitle(e.target.value)} />
+                    <textarea type="text" name="text" value={quickPost} placeholder="Write your thoughts here..." onChange={e => setQuickPost(e.target.value)} id="txtInput" />
                     <button type="submit">submit</button>
                 </form>
                 {props.user.crumbs.map(post => {
@@ -45,15 +48,6 @@ const UserPage = (props) => {
                         </div>
                     )
                 })}
-                <div className='post-placeholder'>
-                    <p>Today I wrote out all the key FlexBox methods whilst playing the FlexBox Froggy game.
-                    What usually takes me minutes of constantly checking online for whether I'm using the correct methods
-                    how takes me seconds. Stop being lazy and just write it out and embed it into your long term memory.
-                    Random example text to show what a post may look like.
-                    </p>
-                </div>
-                <h1>User's Homepage</h1>
-                <h1>User's Homepage</h1>
             </div>
             <div className="sidebar">
 
