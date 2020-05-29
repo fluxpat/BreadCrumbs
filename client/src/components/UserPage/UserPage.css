@@ -22,6 +22,33 @@ Red accent:#EA5E3B
 .feed {
     width: 70%;
     background-color: #F5F9FA;
+
+}
+
+.quick-post {
+    margin: 30px 10px 20px 10px;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+}
+.quick-post-header {
+    display: flex;
+    justify-content: space-evenly;
+}
+.quick-post-header > h3 {
+    margin: 10px 20px
+}
+.quick-post-header > h4 {
+    margin: 10px 20px;
+    width: 250px;
+    color: #EA5E3B;
+}
+.quick-post > textarea {
+    margin: 0px 20px;
+    width: 90%;
+    height: 100px;
+    border-radius: 5px;
+    resize: vertical;
 }
 
 .sidebar {

@@ -5,8 +5,6 @@ import './Auth.css'
 
 const Login = (props) => {
 
-    console.log("PAVLINA WAS ASKING: ", props.setUser)
-
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")

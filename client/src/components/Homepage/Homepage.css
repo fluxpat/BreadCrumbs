@@ -36,7 +36,8 @@ Red accent:#EA5E3B
 }
 
 .home-intro-text {
-    width: 70%
+    width: 70%;
+    text-align: center;
 }
 
 .brioche {

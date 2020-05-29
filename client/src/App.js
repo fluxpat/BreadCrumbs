@@ -17,8 +17,8 @@ function App(props) {
         <Route path='/' render={props => <Homepage {...props} setUser={setUser} />} />
       ) : (
           <div className="user-app">
-            <Route path='/' render={props => <Navbar {...props} setUser={setUser} />} />
-            <Route path='/' render={props => <UserPage {...props} setUser={setUser} />} />
+            <Route path='/' render={props => <Navbar {...props} user={user} setUser={setUser} />} />
+            <Route path='/' render={props => <UserPage {...props} user={user} setUser={setUser} />} />
           </div>
         )}
     </div>

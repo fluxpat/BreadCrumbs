@@ -53,5 +53,7 @@ app.use(cors({
 // Routes middlewares go here
 const auth = require('./routes/auth')
 app.use('/api/auth', auth)
+const crumb = require('./routes/crumb')
+app.use('/api/crumb', crumb)
 
 module.exports = app;
