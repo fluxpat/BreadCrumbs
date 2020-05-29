@@ -110,8 +110,14 @@ router.get('/loggedin', (req, res, next) => {
     // req.isAuthenticated() is defined by passport
     // if (req.isAuthenticated()) {
     if (req.user) {
-        console.log("You are currently logged in!")
-        res.status(200).json(req.user);
+        User
+            .findById(req.user._id)
+            .populate({
+                path: 'crumbs'
+            })
+            .then(user => {
+                res.status(200).json(user);
+            })
         return;
     } else {
         console.log("No user is currently logged in!")
