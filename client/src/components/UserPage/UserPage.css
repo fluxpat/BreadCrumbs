@@ -21,38 +21,88 @@ Red accent:#EA5E3B
 
 .feed {
     width: 70%;
-    background-color: #F5F9FA;
-
 }
 
+/* THE QUICK POST BUBBLE AT THE TOP */
 .quick-post {
     margin: 30px 10px 20px 10px;
-    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
     display:flex;
     flex-direction: column;
+    background-color: #F1E9E3;
 }
 .quick-post-header {
+    margin: 10px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
 }
 .quick-post-header > h3 {
-    margin: 10px 20px
+    margin: 0;
+    font-size: 1em;
+    color: #3C394B;
 }
 .quick-post-header > h4 {
-    margin: 10px 20px;
+    margin: 0;
+    font-size: 0.7em;
+    font-weight: 500;
     width: 250px;
     color: #EA5E3B;
 }
+.quick-post > input {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+}
 .quick-post > textarea {
-    margin: 0px 20px;
-    width: 90%;
+    margin: 10px;
+    padding: 5px;
     height: 100px;
+    border: none;
     border-radius: 5px;
     resize: vertical;
 }
+.quick-post > button {
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: #3C394B;
+}
 
+/* USER's POSTS */
+.post {
+    margin: 20px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, #F5F9FA, #C4DAE1);
+    background-color: #F5F9FA;
+}
+.post > h4 {
+    font-size: 0.8em;
+    font-weight: 400;
+    margin: 10px 10px 0 10px;
+}
+.post > h3 {
+    font-size: 1em;
+    margin: 10px 10px 0 10px;
+}
+.post > p {
+    font-size: 0.7em;
+    margin: 10px;
+    margin: 10px;
+}
+
+/* SIDE BAR WHERE TIPS AND TRICKS ARE SHOWN */
 .sidebar {
-    background-color: #FAF7F2;
+    /* background-color: #FAF7F2; */
+    /* height: 1000px; */
     width: 30%;
-    height: 1000px;
 }

@@ -31,7 +31,7 @@ const UserPage = (props) => {
     return (
         <div className="User-page">
             <div className="feed">
-                <form className="quick-post" onSubmit={handleFormSubmit}>
+                <form className="quick-post" autocomplete="off" onSubmit={handleFormSubmit}>
                     <div className="quick-post-header">
                         <h3>Make a quick-post</h3>
                         {!postStatus ? (<h4>Cannot submit an empty post</h4>) : (<h4> </h4>)}
@@ -43,7 +43,8 @@ const UserPage = (props) => {
                 {props.user.crumbs.map(post => {
                     return (
                         <div className="post" key={post._id}>
-                            <h1>{post.title}</h1>
+                            <h4>Date</h4>
+                            <h3>{post.title}</h3>
                             <p>{post.text}</p>
                         </div>
                     )

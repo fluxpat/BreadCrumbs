@@ -36,7 +36,7 @@ const Login = (props) => {
             <h1>Login</h1>
             <p>Don't have an account?</p>
             <Link to='/signup'>Click here to signup</Link>
-            <form className="auth-form" onSubmit={handleFormSubmit}>
+            <form className="auth-form" autocomplete="off" onSubmit={handleFormSubmit}>
                 <div className="credentials">
                     <label>Username: </label>
                     <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
