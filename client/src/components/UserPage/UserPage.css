@@ -112,20 +112,5 @@ Red accent:#EA5E3B
     width: 30%;
 }
 
-/* -------------------------------------- ZOOM IN ANIMATIONS ------------------------------------- */
-@keyframes easeIn {
-    0% { 
-        /* transform: translateX(-5%); */
-        opacity: 0
-    }
-    100% { 
-        /* transform: translateX(0); */
-        opacity: 1
-     }
-  }
-  .easeIn {
-    animation-name: easeIn;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
-  }
+
   

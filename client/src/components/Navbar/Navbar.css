@@ -75,7 +75,7 @@ Red accent:#EA5E3B
   }
   .easeInTop {
     animation-name: easeInTop;
-    animation-duration: 1s;
+    animation-duration: 0.8s;
     animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
   }
   

@@ -12,7 +12,7 @@ const Homepage = (props) => {
 
     return (
         <div className="Homepage">
-            <div className='home-intro'>
+            <div className='home-intro fadeIn'>
                 <h1 className="logo easeIn">BreadCrumbs</h1>
                 <p className='home-intro-text easeIn'>
                     Self-reflection is a key part of personal development.

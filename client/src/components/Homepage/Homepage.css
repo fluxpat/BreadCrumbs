@@ -46,42 +46,40 @@ Red accent:#EA5E3B
     width: 35%;
 }
 
-/* -------------------------------------- ZOOM IN ANIMATION ------------------------------------- */
-@keyframes easeIn {
+/* -------------------------------------- FADE IN ANIMATION ------------------------------------- */
+@keyframes fadeIn {
     0% { 
-        transform: scale(0.9);
         opacity: 0
     }
     100% { 
-        transform: scale(1.0);
         opacity: 1
      }
   }
-  .easeIn {
-    animation-name: easeIn;
-    animation-duration: 2s;
+  .fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
     animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
   }
 
 /* -------------------------------------- BREAD ANIMATION ------------------------------------- */
 @keyframes breadJiggle {
     0% { 
-        transform: scale(1, 1);
+        transform: scale(1);
     }
     12.5% { 
-        transform: scale(1.05, 1.05);
+        transform: scale(1.05);
     }
     25% { 
-        transform: scale(1, 1);
+        transform: scale(1);
     }
     37.5% { 
-        transform: scale(1.05, 1.05);
+        transform: scale(1.05);
     }
     50% { 
-        transform: scale(1, 1);
+        transform: scale(1);
     }
     100% { 
-        transform: scale(1, 1);
+        transform: scale(1);
         
      }
   }
