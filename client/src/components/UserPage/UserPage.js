@@ -31,7 +31,7 @@ const UserPage = (props) => {
 
     return (
         <div className="User-page">
-            <div className="feed easeIn">
+            <div className="feed">
                 <form className="quick-post" autoComplete="off" onSubmit={handleFormSubmit}>
                     <div className="quick-post-header">
                         <h3>Make a quick-post</h3>

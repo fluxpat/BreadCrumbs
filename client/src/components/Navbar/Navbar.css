@@ -65,7 +65,7 @@ Red accent:#EA5E3B
 /* -------------------------------------- ZOOM IN ANIMATIONS ------------------------------------- */
 @keyframes easeInTop {
     0% { 
-        transform: translateY(-20%);
+        transform: translateY(-30%);
         opacity: 0
     }
     100% { 

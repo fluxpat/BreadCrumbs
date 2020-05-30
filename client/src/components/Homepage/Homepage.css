@@ -57,9 +57,37 @@ Red accent:#EA5E3B
         opacity: 1
      }
   }
-  
   .easeIn {
     animation-name: easeIn;
-    animation-duration: 1s;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
+  }
+
+/* -------------------------------------- BREAD ANIMATION ------------------------------------- */
+@keyframes breadJiggle {
+    0% { 
+        transform: scale(1, 1);
+    }
+    12.5% { 
+        transform: scale(1.05, 1.05);
+    }
+    25% { 
+        transform: scale(1, 1);
+    }
+    37.5% { 
+        transform: scale(1.05, 1.05);
+    }
+    50% { 
+        transform: scale(1, 1);
+    }
+    100% { 
+        transform: scale(1, 1);
+        
+     }
+  }
+  .breadJiggle {
+    animation-name: breadJiggle;
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
   }
