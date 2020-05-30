@@ -10,15 +10,27 @@ const Navbar = (props) => {
         props.setUser({ message: 'Not currently logged in' })
     }
 
+    let scroll = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     return (
-        <div className="Navbar">
+        <div className="Navbar easeInTop">
             <div className="nav-content">
-                <h2 className="nav-logo">BreadCrumbs</h2>
+                <h2 className="nav-logo" title="Home" onClick={scroll}>BreadCrumbs</h2>
                 <div className="nav-buttons">
-                    <img src="./home.png" alt="home" title="Home" className="home-icon" />
-                    <img src="./user.png" alt="user profile" title="Profile" className="profile-icon" />
-                    <img src="./logout.png" alt="logout" className="logout-icon" title="Logout" onClick={handleClick} />
-                    <img src="./donut.png" alt="new post" className="new-crumb" title="New Post" />
+                    <div className="nav-button-div" onClick={scroll} >
+                        <img src="./home.png" alt="home" title="Scroll home" className="home-icon" />
+                    </div>
+                    {/* <div className="nav-button-icon"> */}
+                    {/* <img src="./user.png" alt="user profile" title="Profile" className="profile-icon" /> */}
+                    {/* </div> */}
+                    <div className="nav-button-div" onClick={handleClick} >
+                        <img src="./logout.png" alt="logout" className="logout-icon" title="Logout" />
+                    </div>
+                    <div className="nav-button-div">
+                        <img src="./donut.png" alt="new post" className="new-crumb" title="New Post" />
+                    </div>
                 </div>
             </div>
         </div>

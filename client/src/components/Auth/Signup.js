@@ -30,7 +30,7 @@ const Signup = (props) => {
     }
 
     return (
-        <div className="Auth">
+        <div className="Auth easeIn">
             <h1>Signup</h1>
             <p>Already have an account?</p>
             <Link className="link" to='/'>Click here to login</Link>

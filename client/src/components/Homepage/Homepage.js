@@ -13,13 +13,13 @@ const Homepage = (props) => {
     return (
         <div className="Homepage">
             <div className='home-intro'>
-                <h1 className="logo">BreadCrumbs</h1>
-                <p className='home-intro-text'>
+                <h1 className="logo easeIn">BreadCrumbs</h1>
+                <p className='home-intro-text easeIn'>
                     Self-reflection is a key part of personal development.
                     Documenting and reflecting on our progress helps us continuously improve with direction and purpose.
                     BreadCrumbs provides a simple system for logging your thoughts and state of mind allowing you to look back and reflect as you change and grow over time.
                 </p>
-                <img className="brioche" src="/Brioche.png" alt="" />
+                <img className="brioche easeIn" src="/Brioche.png" alt="" />
                 {/* <button>See Demo</button> */}
             </div>
             <Route exact path='/' render={props => <Login {...props} setUser={setUser} />} />

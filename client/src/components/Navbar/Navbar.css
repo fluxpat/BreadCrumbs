@@ -13,12 +13,12 @@ Red accent:#EA5E3B
 */
 
 .Navbar {
-    position: fixed;
+    height: 60px;
     width: 100%;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
     background: #FAF7F2;
     box-shadow: 0px 0.5px 5px 0px rgb(200, 200, 200)
 }
@@ -31,25 +31,51 @@ Red accent:#EA5E3B
 }
 
 .nav-logo {
+    margin: 0;
     font-size: 1.8em;
     font-weight: 500;
+    cursor: pointer;
     font-family: 'Yellowtail', cursive;
     color: #3C394B
 }
 
 .nav-buttons {
     /* background-color: yellow; */
-    width: 250px;
+    width: 200px;
     display: flex;
     justify-content: space-evenly;
 }
-
-.nav-buttons > img {
-    height: 30px;
+.nav-button-div {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease
+}
+.nav-button-div:hover {
+   background: rgb(209, 222, 226);
+}
+.nav-button-div > img {
+    height: 25px;
 }
 
-.nav-buttons > a > img {
-    height: 30px;
-    cursor: pointer;
-}
+/* -------------------------------------- ZOOM IN ANIMATIONS ------------------------------------- */
+@keyframes easeInTop {
+    0% { 
+        transform: translateY(-20%);
+        opacity: 0
+    }
+    100% { 
+        transform: translateY(0);
+        opacity: 1
+     }
+  }
+  .easeInTop {
+    animation-name: easeInTop;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
+  }
+  

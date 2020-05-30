@@ -10,6 +10,7 @@ const UserPage = (props) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        console.log("USER's CRUMBS: ", props.user.crumbs)
         if (quickPost) {
             axios
                 .post(`/api/crumb/${props.user._id}/newpost`, { title: title, text: quickPost })
@@ -30,8 +31,8 @@ const UserPage = (props) => {
 
     return (
         <div className="User-page">
-            <div className="feed">
-                <form className="quick-post" autocomplete="off" onSubmit={handleFormSubmit}>
+            <div className="feed easeIn">
+                <form className="quick-post" autoComplete="off" onSubmit={handleFormSubmit}>
                     <div className="quick-post-header">
                         <h3>Make a quick-post</h3>
                         {!postStatus ? (<h4>Cannot submit an empty post</h4>) : (<h4> </h4>)}
@@ -41,9 +42,10 @@ const UserPage = (props) => {
                     <button type="submit">submit</button>
                 </form>
                 {props.user.crumbs.map(post => {
+
                     return (
                         <div className="post" key={post._id}>
-                            <h4>Date</h4>
+                            <h4>{post.created_at.slice(0, 10)}</h4>
                             <h3>{post.title}</h3>
                             <p>{post.text}</p>
                         </div>

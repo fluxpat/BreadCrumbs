@@ -43,5 +43,23 @@ Red accent:#EA5E3B
 .brioche {
     margin: 30px;
     padding: 20px;
-    width: 35%
+    width: 35%;
 }
+
+/* -------------------------------------- ZOOM IN ANIMATION ------------------------------------- */
+@keyframes easeIn {
+    0% { 
+        transform: scale(0.9);
+        opacity: 0
+    }
+    100% { 
+        transform: scale(1.0);
+        opacity: 1
+     }
+  }
+  
+  .easeIn {
+    animation-name: easeIn;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
+  }

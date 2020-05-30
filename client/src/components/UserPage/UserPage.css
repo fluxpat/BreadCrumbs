@@ -73,6 +73,10 @@ Red accent:#EA5E3B
     cursor: pointer;
     color: white;
     background-color: #3C394B;
+    transition: background-color 0.2s ease;
+}
+.quick-post > button:hover {
+    background-color: rgb(113, 108, 141);
 }
 
 /* USER's POSTS */
@@ -86,16 +90,17 @@ Red accent:#EA5E3B
     background-color: #F5F9FA;
 }
 .post > h4 {
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 400;
     margin: 10px 10px 0 10px;
+    color: grey;
 }
 .post > h3 {
     font-size: 1em;
-    margin: 10px 10px 0 10px;
+    margin: 0 10px 0 10px;
 }
 .post > p {
-    font-size: 0.7em;
+    font-size: 0.8em;
     margin: 10px;
     margin: 10px;
 }
@@ -106,3 +111,21 @@ Red accent:#EA5E3B
     /* height: 1000px; */
     width: 30%;
 }
+
+/* -------------------------------------- ZOOM IN ANIMATIONS ------------------------------------- */
+@keyframes easeIn {
+    0% { 
+        /* transform: translateX(-5%); */
+        opacity: 0
+    }
+    100% { 
+        /* transform: translateX(0); */
+        opacity: 1
+     }
+  }
+  .easeIn {
+    animation-name: easeIn;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1)
+  }
+  
