@@ -12,18 +12,20 @@ const UserPage = (props) => {
         event.preventDefault();
         console.log("USER's CRUMBS: ", props.user.crumbs)
         if (quickPost) {
-            axios
-                .post(`/api/crumb/${props.user._id}/newpost`, { title: title, text: quickPost })
+            // axios.post(`/api/crumb/${props.user._id}/newpost`, { title: title, text: quickPost })
+            axios.post(`${process.env.REACT_APP_API_URL}/api/crumb/${props.user._id}/newpost`, { title: title, text: quickPost })
             setQuickPost('');
             setTitle('');
             setPostStatus(true);
-            axios.get("/api/auth/loggedin").then(response => {
+            // axios.get("/api/auth/loggedin").then(response => {
+            axios.get(`${process.env.REACT_APP_API_URL}/api/auth/loggedin`).then(response => {
                 props.setUser(response.data)
             })
             // props.setUser(props.user)
         } else {
             setPostStatus(false);
-            axios.get("/api/auth/loggedin").then(response => {
+            // axios.get("/api/auth/loggedin").then(response => {
+            axios.get(`${process.env.REACT_APP_API_URL}/api/auth/loggedin`).then(response => {
                 props.setUser(response.data)
             })
         }

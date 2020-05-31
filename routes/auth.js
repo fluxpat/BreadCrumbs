@@ -49,6 +49,7 @@ router.post("/signup", (req, res, next) => {
                     res.status(400).json({ message: 'Saving user to database went wrong.' });
                     return
                 }
+                console.log("Successful signup!")
 
                 // Automatically log in user after sign up
                 // .login() here is actually predefined passport method
@@ -91,6 +92,7 @@ router.post('/login', (req, res, next) => {
                 res.status(500).json({ message: 'Session save went bad.' });
                 return;
             }
+            console.log("Successful login!")
             // We are now logged in (that's why we can also send req.user)
             User
                 .findById(req.user._id)

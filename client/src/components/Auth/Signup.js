@@ -34,7 +34,7 @@ const Signup = (props) => {
             <h1>Signup</h1>
             <p>Already have an account?</p>
             <Link className="link" to='/'>Click here to login</Link>
-            <form className="auth-form" autocomplete="off" onSubmit={handleFormSubmit}>
+            <form className="auth-form" autoComplete="off" onSubmit={handleFormSubmit}>
                 <div className="credentials">
                     <label>Username: </label>
                     <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)} />
