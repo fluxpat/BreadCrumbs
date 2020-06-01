@@ -31,6 +31,13 @@ const UserPage = (props) => {
         }
     }
 
+    const deletePost = (postId) => {
+        axios.post(`${process.env.REACT_APP_API_URL}/api/crumb/deletePost`, { postId: postId });
+        axios.get(`${process.env.REACT_APP_API_URL}/api/auth/loggedin`).then(response => {
+            props.setUser(response.data)
+        })
+    }
+
     return (
         <div className="User-page">
             <div className="feed">
@@ -47,7 +54,12 @@ const UserPage = (props) => {
 
                     return (
                         <div className="post" key={post._id}>
-                            <h4>{post.created_at.slice(0, 10)}</h4>
+                            <div className="post-header">
+                                <h4>{post.created_at.slice(0, 10)}</h4>
+                                <div className="rubbish-div">
+                                    <img src="./rubbish.png" alt="delete post" className="rubbish-icon" title="Delete Post" onClick={() => deletePost(post._id)} />
+                                </div>
+                            </div>
                             <h3>{post.title}</h3>
                             <p>{post.text}</p>
                         </div>

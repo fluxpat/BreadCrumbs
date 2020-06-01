@@ -38,19 +38,28 @@ router.post('/:id/newpost', (req, res, next) => {
         })
 })
 
-// Getting all the user's posts
-// router.get('/posts', (req, res, next) => {
-//     User
-//         .findById(req.user._id)
-//         .populate({
-//             path: 'crumbs'
-//         })
-//         .then(user => {
-//             res.status(200).json(user);
-//         })
-//         .catch(err => {
-//             res.status(500).json(err);
-//         })
-// })
+// Deleting a user's post
+router.post('/deletePost', (req, res, next) => {
+    console.log("THE req INFO OUR POST ROUTE IS GETTING: ", req.user)
+    // User
+    //     .findByIdAndUpdate(
+    //         req.user._id,
+    //         {
+    //             $pull: { crumbs: req.body.postId },
+    //         },
+    //         { new: true }
+    //     )
+    //     .populate({
+    //         path: 'crumbs'
+    //     })
+    //     .then(user => {
+    //         Crumb.findByIdAndDelete(req.body.postId)
+    //         res.status(200).json(user);
+    //     })
+    //     .catch(err => {
+    //         res.status(500).json(err);
+    //     })
+   
+})
 
 module.exports = router;

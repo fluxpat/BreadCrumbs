@@ -75,22 +75,19 @@ router.post("/signup", (req, res, next) => {
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, theUser, failureDetails) => {
         if (err) {
-            res.status(500).json({ message: 'Something went wrong authenticating user' });
-            return;
+            return res.status(500).json({ message: 'Something went wrong authenticating user' });
         }
 
         if (!theUser) {
             // "failureDetails" contains the error messages
             // from our logic in "LocalStrategy" { message: '...' }.
-            res.status(401).json(failureDetails);
-            return;
+            return res.status(401).json(failureDetails);
         }
 
         // save user in session
         req.login(theUser, (err) => {
             if (err) {
-                res.status(500).json({ message: 'Session save went bad.' });
-                return;
+                return res.status(500).json({ message: 'Session save went bad.' });
             }
             console.log("Successful login!")
             // We are now logged in (that's why we can also send req.user)
@@ -100,8 +97,7 @@ router.post('/login', (req, res, next) => {
                     path: 'crumbs'
                 })
                 .then(theUser => {
-                    res.status(200).json(theUser);
-                    // return;
+                    return res.status(200).json(theUser);
                 })
         });
     })(req, res, next);
@@ -118,6 +114,7 @@ router.delete('/logout', (req, res, next) => {
 router.get('/loggedin', (req, res, next) => {
     // req.isAuthenticated() is defined by passport
     // if (req.isAuthenticated()) {
+    console.log("LOGGEDIN ROUTE gets this REQ: ", req)
     if (req.user) {
         User
             .findById(req.user._id)

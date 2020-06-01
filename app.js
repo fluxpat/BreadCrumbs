@@ -3,6 +3,7 @@ require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose')
@@ -18,12 +19,15 @@ require('./configs/passport');
 
 // Session settings for Passport
 const MongoStore = require('connect-mongo')(session);
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: true,
-  saveUninitialized: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connection }),
-}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie: { maxAge: 60000 }
+  })
+);
 app.use(flash());
 
 // Use passport.initialize() and passport.session()
@@ -43,8 +47,8 @@ mongoose
 const app_name = require('./package.json').name;
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -62,7 +66,7 @@ app.use('/api/crumb', crumb)
 
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/client/build/index.html");
 });
 
 module.exports = app;

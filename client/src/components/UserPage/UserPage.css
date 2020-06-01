@@ -89,7 +89,12 @@ Red accent:#EA5E3B
     background-image: linear-gradient(to bottom right, #F5F9FA, #C4DAE1);
     background-color: #F5F9FA;
 }
-.post > h4 {
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-header > h4 {
     font-size: 0.7em;
     font-weight: 400;
     margin: 10px 10px 0 10px;
@@ -103,6 +108,10 @@ Red accent:#EA5E3B
     font-size: 0.8em;
     margin: 10px;
     margin: 10px;
+}
+.rubbish-icon {
+    height: 15px;
+    cursor: pointer;
 }
 
 /* SIDE BAR WHERE TIPS AND TRICKS ARE SHOWN */
