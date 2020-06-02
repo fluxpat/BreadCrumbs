@@ -6,7 +6,7 @@ const signup = (username, password) => {
         .post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, {
             username: username,
             password: password
-        })
+        }, { withCredentials: true })
         .then(response => {
             return response.data;
         })
@@ -21,7 +21,7 @@ const login = (username, password) => {
         .post(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
             username: username,
             password: password
-        })
+        }, { withCredentials: true })
         .then(response => {
             return response.data;
         })
@@ -32,7 +32,7 @@ const login = (username, password) => {
 
 const logout = () => {
     // axios.delete("/api/auth/logout");
-    axios.delete(`${process.env.REACT_APP_API_URL}/api/auth/logout`);
+    axios.delete(`${process.env.REACT_APP_API_URL}/api/auth/logout`, { withCredentials: true });
 };
 
 export { signup, login, logout };

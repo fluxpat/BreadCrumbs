@@ -8,8 +8,6 @@ const Homepage = (props) => {
 
     let setUser = props.setUser
 
-    console.log("HOMEPAGE's props: ", props)
-
     return (
         <div className="Homepage">
             <div className='home-intro fadeIn'>

@@ -27,36 +27,27 @@ router.post("/signup", (req, res, next) => {
     User.findOne({ username })
         .then(user => {
             if (user !== null) {
-                res.status(400).json({ message: "The username already exists" });
-                return;
+                return res.status(400).json({ message: "The username already exists" });
             }
-
             if (password.length < 7) {
-                res.status(400).json({ message: 'Your password must be at least 7 characters long' });
-                return;
+                return res.status(400).json({ message: 'Your password must be at least 7 characters long' });
             }
-
             const salt = bcrypt.genSaltSync(bcryptSalt);
             const hashPass = bcrypt.hashSync(password, salt);
-
             const newUser = new User({
                 username: username,
                 password: hashPass
             });
-
             newUser.save((err) => {
                 if (err) {
-                    res.status(400).json({ message: 'Saving user to database went wrong.' });
-                    return
+                    return res.status(400).json({ message: 'Saving user to database went wrong.' });
                 }
                 console.log("Successful signup!")
-
                 // Automatically log in user after sign up
                 // .login() here is actually predefined passport method
                 req.login(newUser, (err) => {
                     if (err) {
-                        res.status(500).json({ message: 'Login after signup went bad.' });
-                        return;
+                        return res.status(500).json({ message: 'Login after signup went bad.' });
                     }
                     // Send the user's information to the frontend
                     // We can use also: res.status(200).json(req.user);
@@ -77,27 +68,24 @@ router.post('/login', (req, res, next) => {
         if (err) {
             return res.status(500).json({ message: 'Something went wrong authenticating user' });
         }
-
         if (!theUser) {
             // "failureDetails" contains the error messages
-            // from our logic in "LocalStrategy" { message: '...' }.
             return res.status(401).json(failureDetails);
         }
-
         // save user in session
         req.login(theUser, (err) => {
-            if (err) {
-                return res.status(500).json({ message: 'Session save went bad.' });
-            }
+            if (err) { return res.status(500).json({ message: 'Session save went bad.' }) }
             console.log("Successful login!")
+            // console.log("Logging in using this REQ data: ", req)
             // We are now logged in (that's why we can also send req.user)
             User
                 .findById(req.user._id)
                 .populate({
                     path: 'crumbs'
                 })
-                .then(theUser => {
-                    return res.status(200).json(theUser);
+                .then(user => {
+                    // console.log("THEN the back send this user data: ", user)
+                    res.status(200).json(user);
                 })
         });
     })(req, res, next);
@@ -105,7 +93,6 @@ router.post('/login', (req, res, next) => {
 
 // Logout POST route
 router.delete('/logout', (req, res, next) => {
-    // req.logout() is defined by passport
     req.logout();
     res.status(200).json({ message: 'Log out success!' });
 });
@@ -114,7 +101,6 @@ router.delete('/logout', (req, res, next) => {
 router.get('/loggedin', (req, res, next) => {
     // req.isAuthenticated() is defined by passport
     // if (req.isAuthenticated()) {
-    console.log("LOGGEDIN ROUTE gets this REQ: ", req)
     if (req.user) {
         User
             .findById(req.user._id)

@@ -20,7 +20,8 @@ router.post('/:id/newpost', (req, res, next) => {
             text: text
         })
         .then(crumb => {
-            return User.findByIdAndUpdate(
+            // console.log("THIS IS THE NEW CRUMB WE JUST MADE: ", crumb)
+            User.findByIdAndUpdate(
                 req.params.id,
                 {
                     $push: {
@@ -32,7 +33,11 @@ router.post('/:id/newpost', (req, res, next) => {
                 },
                 { new: true }
             )
+                .populate({
+                    path: 'crumbs'
+                })
                 .then(updatedUser => {
+                    console.log("THE UPDATED USER WITH NEW POST: ", updatedUser)
                     res.json(updatedUser);
                 })
         })
@@ -40,26 +45,30 @@ router.post('/:id/newpost', (req, res, next) => {
 
 // Deleting a user's post
 router.post('/deletePost', (req, res, next) => {
-    console.log("THE req INFO OUR POST ROUTE IS GETTING: ", req.user)
-    // User
-    //     .findByIdAndUpdate(
-    //         req.user._id,
-    //         {
-    //             $pull: { crumbs: req.body.postId },
-    //         },
-    //         { new: true }
-    //     )
-    //     .populate({
-    //         path: 'crumbs'
-    //     })
-    //     .then(user => {
-    //         Crumb.findByIdAndDelete(req.body.postId)
-    //         res.status(200).json(user);
-    //     })
-    //     .catch(err => {
-    //         res.status(500).json(err);
-    //     })
-   
+    console.log("the post being deleted: ", req.body.postId)
+    Crumb.findOneAndDelete({ _id: req.body.postId })
+        .then(crumb => {
+            console.log("WUUHHH: ", crumb);
+            User
+                .findByIdAndUpdate(
+                    req.user._id,
+                    {
+                        $pull: { crumbs: req.body.postId },
+                    },
+                    { new: true }
+                )
+                .populate({
+                    path: 'crumbs'
+                })
+                .then(user => {
+                    console.log("THE req INFO OUR POST ROUTE IS GETTING: ", req.body.postId)
+                    res.status(200).json(user);
+                })
+                .catch(err => {
+                    res.status(500).json(err);
+                })
+        })
+
 })
 
 module.exports = router;
