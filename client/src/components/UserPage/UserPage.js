@@ -10,11 +10,9 @@ const UserPage = (props) => {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log("USER's CRUMBS: ", props.user.crumbs)
         if (quickPost) {
             axios.post(`${process.env.REACT_APP_API_URL}/api/crumb/${props.user._id}/newpost`, { title: title, text: quickPost }, { withCredentials: true })
                 .then(response => {
-                    console.log("AM I GETTING THE RESPONSE FOR RE-RENDER??", response.data)
                     props.setUser(response.data)
                 })
             setQuickPost('');

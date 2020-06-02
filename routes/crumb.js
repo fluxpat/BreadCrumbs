@@ -20,7 +20,6 @@ router.post('/:id/newpost', (req, res, next) => {
             text: text
         })
         .then(crumb => {
-            // console.log("THIS IS THE NEW CRUMB WE JUST MADE: ", crumb)
             User.findByIdAndUpdate(
                 req.params.id,
                 {
@@ -37,7 +36,6 @@ router.post('/:id/newpost', (req, res, next) => {
                     path: 'crumbs'
                 })
                 .then(updatedUser => {
-                    console.log("THE UPDATED USER WITH NEW POST: ", updatedUser)
                     res.json(updatedUser);
                 })
         })
@@ -45,10 +43,8 @@ router.post('/:id/newpost', (req, res, next) => {
 
 // Deleting a user's post
 router.post('/deletePost', (req, res, next) => {
-    console.log("the post being deleted: ", req.body.postId)
     Crumb.findOneAndDelete({ _id: req.body.postId })
         .then(crumb => {
-            console.log("WUUHHH: ", crumb);
             User
                 .findByIdAndUpdate(
                     req.user._id,
@@ -61,7 +57,6 @@ router.post('/deletePost', (req, res, next) => {
                     path: 'crumbs'
                 })
                 .then(user => {
-                    console.log("THE req INFO OUR POST ROUTE IS GETTING: ", req.body.postId)
                     res.status(200).json(user);
                 })
                 .catch(err => {

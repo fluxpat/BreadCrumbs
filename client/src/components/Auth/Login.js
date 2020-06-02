@@ -14,7 +14,6 @@ const Login = (props) => {
 
         login(username, password)
             .then(response => {
-                // console.log("This is the login response: ", response)
                 setUsername("")
                 setPassword("")
                 props.setUser(response)

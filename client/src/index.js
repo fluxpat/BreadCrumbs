@@ -8,7 +8,6 @@ import axios from 'axios'
 
 // axios.get("/api/auth/loggedin").then(response => {
 axios.get(`${process.env.REACT_APP_API_URL}/api/auth/loggedin`, { withCredentials: true }).then(response => {
-  console.log("The current user state: ", response.data)
   const user = response.data;
 
   ReactDOM.render(

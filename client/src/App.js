@@ -9,7 +9,6 @@ import Navbar from './components/Navbar/Navbar'
 function App(props) {
 
   const [user, setUser] = useState(props.user)
-  console.log("The current user: ", user)
 
   return (
     <div className="App">
