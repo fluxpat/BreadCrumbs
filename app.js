@@ -66,7 +66,7 @@ app.use('/api/crumb', crumb)
 
 app.use((req, res) => {
   // If no routes match, send them the React HTML.
-  res.sendFile(__dirname + "/client/build/index.html");
+  res.sendFile(__dirname + "client/build/index.html");
 });
 
 module.exports = app;
